@@ -1,10 +1,11 @@
 'use strict';
 
+let randomNumber = Math.floor(Math.random() * 101);
 
 function guessTheNumber(num) {
 
+  console.log(num);
   function areYouLucky(num, attempts) {
-    console.log(num);
     let n = prompt('Угадай целое число от 1 до 100 :)');
     if (parseInt(n) > num) {
       attempts--;
@@ -18,7 +19,7 @@ function guessTheNumber(num) {
       attempts--;
       if (attempts === 0) {
         if (confirm('Попытки закончились, хотите сыграть еще?')) {
-          areYouLucky(Math.floor(Math.random() * 101),10);
+          areYouLucky(Math.floor(randomNumber,10));
         }
       } else {
         alert('Загаданное число больше, осталось попыток ' + attempts);
@@ -40,5 +41,5 @@ function guessTheNumber(num) {
   areYouLucky(num, 10);
 }
 
-guessTheNumber(Math.floor(Math.random() * 101));
 
+guessTheNumber(randomNumber);
